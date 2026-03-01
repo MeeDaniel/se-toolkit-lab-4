@@ -8,6 +8,7 @@ interface Item {
   type: string
   title: string
   created_at: string
+  description: string
 }
 
 function App() {
@@ -61,7 +62,7 @@ function App() {
   if (!token) {
     return (
       <form className="token-form" onSubmit={handleConnect}>
-        <h1>API Token</h1>
+        <h1>API Tokenn</h1>
         <p>Enter your API token to connect.</p>
         <input
           type="password"
@@ -77,7 +78,7 @@ function App() {
   return (
     <div>
       <header className="app-header">
-        <h1>Items</h1>
+        <h1>Itemss</h1>
         <button className="btn-disconnect" onClick={handleDisconnect}>
           Disconnect
         </button>
@@ -94,6 +95,7 @@ function App() {
               <th>Type</th>
               <th>Title</th>
               <th>Created at</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
@@ -103,6 +105,7 @@ function App() {
                 <td>{item.type}</td>
                 <td>{item.title}</td>
                 <td>{item.created_at}</td>
+                <td>{item.description}</td>
               </tr>
             ))}
           </tbody>
